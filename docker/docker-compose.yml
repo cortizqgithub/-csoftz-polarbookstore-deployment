@@ -5,6 +5,7 @@ services:
 
   catalog-service:
     depends_on:
+      - config-service
       - polar-postgres
     image: "catalog-service"
     container_name: "catalog-service"
@@ -23,6 +24,7 @@ services:
   
   order-service:
     depends_on:
+      - config-service
       - polar-postgres
       - polar-rabbitmq
     image: "order-service"
@@ -42,6 +44,7 @@ services:
       
   dispatcher-service:
     depends_on:
+      - config-service
       - polar-rabbitmq
     image: "dispatcher-service"
     container_name: dispatcher-service
@@ -57,6 +60,7 @@ services:
       
   edge-service:
     depends_on:
+      - config-service
       - polar-keycloak
       - polar-redis
       - polar-ui
