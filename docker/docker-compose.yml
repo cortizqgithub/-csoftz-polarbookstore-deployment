@@ -95,7 +95,7 @@ services:
 
   # Backing Services
   polar-ui:
-    image: "ghcr.io/polarbookshop/polar-ui:v1"
+    image: "polar-ui"
     container_name: "polar-ui"
     ports:
       - 9104:9004
